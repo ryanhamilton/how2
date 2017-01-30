@@ -2,7 +2,7 @@ language: java
 
 deploy:
   provider: releases
-  api_key: "01dfdfd3e8a00c3875bd843a149f840b39f4dc9e"
+  api_key: "8c3fdb3e69509d0c095f9c6f22016285584abe2c"
   file: "build/libs/how2.jar"
   skip_cleanup: true
   on:
