@@ -2,8 +2,8 @@ language: java
 
 deploy:
   provider: releases
-  api_key: "8c3fdb3e69509d0c095f9c6f22016285584abe2c"
-  file: "build/libs/how2.jar"
+  api_key: "$GITHUB_TOKEN"
+  file: "FILE TO UPLOAD"
   skip_cleanup: true
   on:
     tags: true
