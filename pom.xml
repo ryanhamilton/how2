@@ -1,0 +1,53 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.timestored</groupId> <artifactId>how2</artifactId>  <packaging>jar</packaging> <version>1.0-SNAPSHOT</version>  <name>how2</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+	<exec.mai‌​nClass>io.jpad.how2.How2</exec.mai‌​nClass>
+  </properties>
+  
+   <scm>
+    <developerConnection>scm:git:git@github.com:ryanhamilton/how2.git</developerConnection>
+    <connection>scm:git:git@github.com:ryanhamilton/how2.git</connection>
+    <url>scm:git:git@github.com:ryanhamilton/how2.git</url>
+  </scm>
+  
+  <dependencies>
+    <dependency> <groupId>org.jsoup</groupId> <artifactId>jsoup</artifactId> <version>1.10.2</version> <scope>compile</scope> </dependency>
+    <dependency> <groupId>org.projectlombok</groupId> <artifactId>lombok</artifactId> <version>1.16.12</version> <scope>provided</scope> </dependency>
+    <dependency> <groupId>junit</groupId> <artifactId>junit</artifactId> <version>3.8.1</version> <scope>test</scope> </dependency>
+  </dependencies>
+  
+  
+
+	<build>
+		<finalName>how2</finalName>
+		<plugins>
+			<!-- Maven Assembly Plugin -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId> <artifactId>maven-assembly-plugin</artifactId> <version>2.4.1</version>
+				<configuration>
+					<descriptorRefs> <descriptorRef>jar-with-dependencies</descriptorRef> </descriptorRefs>
+					<!-- MainClass in mainfest make a executable jar -->
+					<archive> <manifest> <mainClass>${exec.mai‌​nClass}</mainClass> </manifest> </archive>
+				</configuration>
+				<executions> <execution> <id>make-assembly</id> <phase>package</phase> <goals> <goal>single</goal> </goals> </execution> </executions>
+			</plugin>
+			<plugin> 
+				<groupId>org.codehaus.mojo</groupId> <artifactId>exec-maven-plugin</artifactId>
+				<configuration> <mainClass>${exec.mai‌​nClass}</mainClass> </configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId> <artifactId>maven-release-plugin</artifactId> <version>2.5.3</version>
+			</plugin>
+			</plugins>
+		</plugins>
+	</build>
+
+
+	
+</project>
