@@ -11,8 +11,8 @@
    <scm>
     <developerConnection>scm:git:git@github.com:ryanhamilton/how2.git</developerConnection>
     <connection>scm:git:git@github.com:ryanhamilton/how2.git</connection>
-    <url>scm:git:git@github.com:ryanhamilton/how2.git</url>
-    <tag>v1.0</tag>
+    <url>https://github.com/ryanhamilton/how2</url>
+	<tag>HEAD</tag>
   </scm>
   
   <dependencies>
