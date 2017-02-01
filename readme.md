@@ -18,6 +18,20 @@ Two arguments e.g. how2 "java hello world" 0 = Show the first result
 Three arguments e.g. how2 "java hello world" 0 open = Open that page in browser
 
 
+Install Linux
+------------------------
+
+```
+mkdir -p ~/bin
+wget -q -O bin/how2.jar jpad.io/how2.jar 
+echo "alias how2='java -jar ~/bin/how2.jar'" >> ~/.bashrc
+source ~/.bashrc
+```
+
+
+
+
+
 Examples
 -------------------------
 
