@@ -23,7 +23,7 @@ import lombok.Data;
 		}
 		title = document.title(); 
 		question = document.select("div.post-text").text();
-		answers = new ArrayList<>();
+		answers = new ArrayList<StackAnswer>();
 		for(Element answerElement : document.select("div.answer")) {
 			
 			String allText = getText(answerElement, "code,p");

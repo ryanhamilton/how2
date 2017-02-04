@@ -88,7 +88,9 @@ public class How2 {
 			    if(ce.equals(query)) {
 			    	return ce.getSearchResults();
 			    }
-			} catch(ClassCastException | IOException | ClassNotFoundException e) {
+			} catch(ClassNotFoundException e) {
+			} catch(ClassCastException c) {
+			} catch(IOException c) {
 			}
 		}
 		return null;
@@ -120,13 +122,15 @@ public class How2 {
 			} catch(Exception e) {
 				// any problems parsing search display to user
 				File f = File.createTempFile("problem-query", ".html");
-				try(PrintWriter out = new PrintWriter(f)){
+				try {
+					PrintWriter out = new PrintWriter(f);
 				    out.println(doc.outerHtml());
 				    if(Desktop.isDesktopSupported()) {
 				    	Desktop.getDesktop().browse(f.toURI());
 				    } else {
 				    	System.err.println("Couldnt parse HTML. See " + f.getAbsolutePath());
 				    }
+				} catch (IOException ioe) {
 				}
 				throw new IOException();
 			}

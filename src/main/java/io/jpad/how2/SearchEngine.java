@@ -16,7 +16,7 @@ public class SearchEngine {
 
 	static List<SearchResult> search(Document doc) throws IOException {
 		Elements links = doc.select("div[class=g]");
-		List<SearchResult> res = new ArrayList<>();
+		List<SearchResult> res = new ArrayList<SearchResult>();
 		
 		for (Element link : links) {
 			Elements titles = link.select("h3[class=r]");
